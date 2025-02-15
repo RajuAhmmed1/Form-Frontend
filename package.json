@@ -1,6 +1,6 @@
 {
   "name": "dynamic_form",
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://dynamicform-1.onrender.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
