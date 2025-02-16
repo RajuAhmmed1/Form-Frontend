@@ -191,7 +191,9 @@ const Form = () => {
 
     try {
       const response = await axios.post(
-        "https://businessfundingform.netlify.app/submit",
+
+        "https://dynamicforms-0wz2.onrender.com/submit",
+
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
