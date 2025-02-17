@@ -503,7 +503,7 @@ const Form = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full md:w-1/2 flex flex-row justify-center items-center mx-auto mb-16 mt-10 px-4 py-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+        className="cursor-pointer w-full md:w-1/2 flex flex-row justify-center items-center mx-auto mb-16 mt-10 px-4 py-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
