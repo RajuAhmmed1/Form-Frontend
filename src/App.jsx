@@ -5,6 +5,7 @@ import { useDropzone } from "react-dropzone";
 import logo from "./assets/logo.jpg"; // Import the logo image
 
 const Form = () => {
+  const [userIp, setUserIp] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [taxId, setTaxId] = useState("");
   const [fundAmount, setFundAmount] = useState("");
@@ -33,6 +34,22 @@ const Form = () => {
       }
     },
   });
+
+
+
+  useEffect(() => {
+    const fetchIp = async () => {
+      try {
+        const response = await axios.get("https://api.ipify.org?format=json");
+        setUserIp(response.data.ip); // Store the IP address in state
+      } catch (error) {
+        console.error("Error fetching IP address:", error);
+      }
+    };
+  
+    fetchIp();
+  }, []);
+
 
   useEffect(() => {
     if (fileRejections.length > 0) {
@@ -184,6 +201,8 @@ const Form = () => {
     formData.append("businessStartDate", businessStartDate); // Add business start date
     formData.append("owners", JSON.stringify(owners)); // Send owners as a JSON string
     formData.append("consentChecked", consentChecked); // Add consent checkbox value
+    formData.append("userIp", userIp); // Add the user's IP address
+
 
     files.forEach((file) => {
       formData.append("files", file);
@@ -225,7 +244,7 @@ const Form = () => {
       </a>  
     <a href="https://drobyonline.com/" 
     style={{ color: '#007Bff', textDecoration: 'underline' }}>
-    Droby Online
+    Drobyonline.com
     </a>
 </div>
 
