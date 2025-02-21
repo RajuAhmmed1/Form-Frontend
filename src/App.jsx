@@ -219,10 +219,15 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto px-4 md:px-6 pt-6 pb-6 bg-white shadow-md rounded-lg mt-2">
       {/* Logo */}
-      <div className="flex justify-center mb-6">
+     <div className="flex flex-col items-center mb-6">
+      <a href="https://drobyonline.com/" >
         <img src={logo} alt="Logo" className="w-36 h-auto" />
-        <a href="https://drobyonline.com/" className="mt-2">Droby Online</a>
-      </div>
+      </a>  
+    <a href="https://drobyonline.com/" 
+    style={{ color: '#007Bff', textDecoration: 'underline' }}>
+    Droby Online
+    </a>
+</div>
 
       {/* Title */}
       <h1 className="text-2xl md:text-2xl font-bold mb-12 text-center ">Business Funding Form</h1>
