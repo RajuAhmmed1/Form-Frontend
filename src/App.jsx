@@ -518,7 +518,7 @@ const Form = () => {
             className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
           />
           <label className="ml-2 block text-sm text-gray-900">
-            By clicking here you authorize Drobyonline.com to use the gathered information for the purpose of receiving working capital for the business explicitly named on this application matching the bank statements. Only platform partners will receive any related information for this applicant with the explicit consent of the applicant to perform a background check or credit check of the owner and the company to receive funding for the business.
+            By clicking here you authorized the parent company of Drobyonline.com - 275a Owner LLC to use the gathered information for the purpose of receiving working capital for the business explicitly named on this application matching the bank statements. Only 275a Owner ISO partners will receive any related information for this applicant with the explicit consent of the applicant to perform a background check or credit check of the owner and the company to receive funding for the business.
           </label>
         </div>
         {errors.consentChecked && <p className="text-red-500 text-sm">{errors.consentChecked}</p>}
