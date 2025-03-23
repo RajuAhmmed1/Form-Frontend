@@ -5,6 +5,7 @@ import { useDropzone } from "react-dropzone";
 import logo from "./assets/logo.jpg"; // Import the logo image
 
 const Form = () => {
+  const [hearFromUs, setHearFromUs] = useState("");
   const [userIp, setUserIp] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [taxId, setTaxId] = useState("");
@@ -139,6 +140,7 @@ const Form = () => {
     const newErrors = {};
 
     // Business Info Validation
+  
     if (!businessName) newErrors.businessName = "The business name is required.";
     if (!taxId) newErrors.taxId = "The business tax ID is required.";
     if (!fundAmount) newErrors.fundAmount = "The fund amount is required.";
@@ -159,6 +161,8 @@ const Form = () => {
       }
     });
 
+    //where did you here from us
+    if (!hearFromUs) newErrors.hearFromUs = "This field is required.";
     // Consent Checkbox Validation
     if (!consentChecked) newErrors.consentChecked = "You must agree to the terms and conditions.";
 
@@ -202,6 +206,7 @@ const Form = () => {
     formData.append("owners", JSON.stringify(owners)); // Send owners as a JSON string
     formData.append("consentChecked", consentChecked); // Add consent checkbox value
     formData.append("userIp", userIp); // Add the user's IP address
+    formData.append("hearFromUs", hearFromUs);
 
 
     files.forEach((file) => {
@@ -507,7 +512,21 @@ const Form = () => {
           </div>
         ))}
       </div>
-
+{/* Where did you hear from us? */}
+<div className="mb-4 mt-8">
+  <label className="block text-sm font-medium text-gray-700">Where did you hear from us? <span className="text-red-500">*</span></label>
+  <div className="mt-1">
+    {errors.hearFromUs && <p className="text-red-500 text-sm">{errors.hearFromUs}</p>} {/* Error message */}
+    <input
+      type="text"
+      value={hearFromUs}
+      onChange={(e) => setHearFromUs(e.target.value)}
+      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+      placeholder="e.g., Google, Friend, Advertisement, etc."
+    />
+  </div>
+</div>
+      
       {/* Consent Checkbox */}
       <div className="mb-4 mt-8">
         <div className="flex items-center">
